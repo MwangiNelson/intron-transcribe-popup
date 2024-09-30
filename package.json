@@ -1,0 +1,31 @@
+{
+  "name": "intron-transcribe-widget",
+  "version": "1.0.0",
+  "main": "dist/transcribe.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src --out-dir dist && copyfiles src/transcribe.css dist"
+  },
+  "keywords": [
+    "intron",
+    "popup",
+    "recording",
+    "transcribe"
+  ],
+  "author": "MwangiNelson",
+  "license": "MIT",
+  "description": "",
+  "devDependencies": {
+    "@babel/cli": "^7.25.6",
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
+    "@babel/preset-react": "^7.24.7",
+    "copyfiles": "^2.4.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
+}
