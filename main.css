@@ -1,0 +1,779 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+@media (min-width: 768px) {
+  .d-md-none {
+    display: none !important;
+  }
+  .d-md-inline {
+    display: inline !important;
+  }
+  .d-md-inline-block {
+    display: inline-block !important;
+  }
+  .d-md-block {
+    display: block !important;
+  }
+  .d-md-table {
+    display: table !important;
+  }
+  .d-md-table-row {
+    display: table-row !important;
+  }
+  .d-md-table-cell {
+    display: table-cell !important;
+  }
+  .d-md-flex {
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+  .d-md-inline-flex {
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important;
+  }
+}
+
+.cl-intronies-app {
+  --primary: #45408f;
+  --primary-lighter: #855cff;
+  --primary-pink-lighter: #552a5a;
+  --primary-light: #e7e1fe;
+  --secondary: #a8cf45;
+  --primary-transparent: #47337b80;
+  --secondary-transparent: #a8cf4580;
+  --orange: #ff5757;
+  --orange-light: #f9e8e0;
+  --orange-sharp: #ff8a3b;
+  --turquoise: #b7f6ea;
+  --turquoise-light: #dcf2f5;
+  --turquoise-dark: #41ccc9;
+  --btn-gradient-to-right: linear-gradient(to right, #4a77ae, #47337b);
+  --btn-gradient-to-left: linear-gradient(to left, #4a77ae, #41ccc9);
+  --btn-gradient-to-bottom: linear-gradient(to bottom, #47337b, #44559a);
+  --link: #4a77ae;
+  --link-dark: #47337b;
+  --border: rgba(51, 51, 51, 0.2);
+  --text: #717171;
+  --background: #f9fafe;
+  --light: #fcffff;
+  --pink-light: #ffe1e1;
+  --link-light: #f0e8fe;
+  --purple: #c287ff;
+  --shadow: rgba(170, 170, 170, 0.1);
+  --orange-lighter: #f8e7df;
+  --dull: #333333;
+  --dull-dark: #a2a6ba;
+  --yellow: #ffcc41;
+  --red: #fb745b;
+  --zink: #40dbbc;
+  --white-opaque: #ffffff15;
+  --nav-search-bar: #47337b0a;
+  --nav-search-bar-text: rgba(51, 51, 51, 0.8);
+  --light-grey: #ebecf0;
+}
+
+.cl-intronies-speech-margin {
+  margin-bottom: 100px;
+}
+
+.cl-intronies-speak_toggle {
+  width: 120px;
+  height: 40px;
+  margin-left: 24px;
+  border-radius: 5.5rem;
+  font-size: 20px;
+  line-height: 30px;
+  background-image: linear-gradient(to right, #47337b, #4a77ae);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 0px;
+  position: relative;
+}
+
+.cl-intronies-speak_toggle .custom-control-input {
+  left: unset;
+  right: 20px;
+  left: unset;
+  right: 20px;
+  position: absolute;
+  z-index: -1;
+  width: 1rem;
+  height: 1.25rem;
+  opacity: 0;
+}
+
+.cl-intronies-speak_toggle label {
+  color: #ffffff;
+  position: relative;
+  left: 0px;
+  font-size: 16px !important;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cl-intronies-speak_toggle label span {
+  padding-left: 14px;
+}
+
+.cl-intronies-speak_toggle.cl-intronies-custom-switch
+  .custom-control-label::before {
+  width: 30px;
+  height: 18px;
+  border-radius: 14.5px;
+  left: 75px;
+  top: 10px;
+  content: "";
+  position: absolute;
+  background-color: #fff;
+}
+
+.custom-control-label::before,
+.custom-file-label,
+.custom-select {
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+}
+
+.cl-intronies-speak_toggle.cl-intronies-custom-switch
+  .custom-control-label::after {
+  width: 15px;
+  height: 15px;
+  border-radius: 50px;
+  left: calc(76px + 0px);
+  top: calc(8.6px + 3px);
+  background-color: blue;
+  content: "";
+  position: absolute;
+}
+
+.cl-intronies-speak_toggle.cl-intronies-custom-switch
+  .custom-control-input:checked
+  ~ .custom-control-label::after {
+  background-color: blue;
+  -webkit-transform: translateX(7.5px);
+  transform: translateX(13px);
+}
+
+.cl-intronies-speaking_widget {
+  max-width: 667px;
+  width: 100%;
+  position: fixed !important;
+  z-index: 20;
+  top: 93px;
+  right: 20px;
+  display: none;
+}
+
+.cl-intronies-speaking_widget .cl-intronies-widget_head {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+  gap: 12px;
+}
+
+.cl-intronies-speaking_widget .cl-intronies-general_wrapp {
+  background-color: var(--link-dark);
+  padding: 10px 20px;
+  border-radius: 33px;
+  font-size: 16px;
+  line-height: 27px;
+  color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(21, 24, 35, 0.7) !important;
+  padding: 10px 20px;
+}
+
+.cl-intronies-speaking_widget .cl-intronies-wallet_wrapp {
+  color: var(--turquoise-dark);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.cl-intronies-speaking_widget .cl-intronies-widget_middle {
+  margin-bottom: 12px;
+}
+
+.cl-intronies-speaking_widget
+  .cl-intronies-widget_middle
+  .cl-intronies-recording_wrapp {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 13px;
+  border-radius: 50px;
+  box-shadow: 0 0.5rem 1rem rgba(21, 24, 35, 0.7) !important;
+}
+
+.cl-intronies-speaking_widget
+  .cl-intronies-widget_middle
+  .cl-intronies-recording_wrapp
+  .cl-intronies-record_time {
+  width: 140px;
+}
+
+.cl-intronies-speaking_widget
+  .cl-intronies-widget_middle
+  .cl-intronies-recording_wrapp
+  .cl-intronies-record_time
+  h6 {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0;
+}
+
+.cl-intronies-speaking_widget
+  .cl-intronies-widget_middle
+  .cl-intronies-recording_wrapp
+  .cl-intronies-btn_record__speak {
+  width: 60px;
+  height: 45px;
+  border-radius: 50px;
+  background-color: #ff5757;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.cl-intronies-speaking_widget
+  .cl-intronies-widget_middle
+  .cl-intronies-recording_wrapp
+  .cl-intronies-btn_record__speak:hover {
+  background-color: rgba(255, 87, 87, 0.8);
+}
+
+.cl-intronies-speaking_widget
+  .cl-intronies-widget_middle
+  .cl-intronies-recording_wrapp
+  .cl-intronies-pause_button__speak {
+  width: 60px;
+  height: 45px;
+  border-radius: 50px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.cl-intronies-speaking_widget
+  .cl-intronies-widget_middle
+  .cl-intronies-recording_wrapp
+  .cl-intronies-pause_button__speak:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.cl-intronies-speaking_widget
+  .cl-intronies-widget_middle
+  .cl-intronies-recording_wrapp
+  .cl-intronies-record_player {
+  max-width: 209px;
+  display: flex;
+  align-items: center;
+}
+
+.cl-intronies-speaking_widget
+  .cl-intronies-widget_middle
+  .cl-intronies-recording_wrapp
+  .cl-intronies-cta_btn {
+  width: 87px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  border-radius: 60px;
+  font-size: 13px;
+  line-height: 10px;
+  color: var(--zink);
+  border: 1px solid #40dbbc !important;
+}
+
+.cl-intronies-speaking_widget
+  .cl-intronies-widget_middle
+  .cl-intronies-recording_wrapp
+  .cl-intronies-cta_btn:hover {
+  background-color: var(--zink);
+  color: #fff;
+}
+
+.cl-intronies-speaking_widget
+  .cl-intronies-widget_middle
+  .cl-intronies-recording_wrapp
+  .cl-intronies-cta_btn:hover
+  svg
+  path {
+  stroke: #fff;
+}
+
+.cl-intronies-speaking_widget
+  .cl-intronies-widget_middle
+  .cl-intronies-recording_wrapp
+  .cl-intronies-cta_btn:hover
+  svg
+  #Rectangle_129 {
+  stroke: #fff;
+}
+
+.cl-intronies-speaking_widget
+  .cl-intronies-widget_middle
+  .cl-intronies-recording_wrapp
+  .cl-intronies-cta_btn.btn_clear {
+  color: var(--orange);
+  border: 1px solid var(--orange) !important;
+}
+
+.cl-intronies-speaking_widget
+  .cl-intronies-widget_middle
+  .cl-intronies-recording_wrapp
+  .cl-intronies-cta_btn.btn_clear:hover {
+  background-color: var(--orange);
+  color: #fff;
+}
+
+.cl-intronies-speaking_widget
+  .cl-intronies-widget_middle
+  .cl-intronies-recording_wrapp
+  .cl-intronies-cta_btn.btn_clear:hover
+  svg
+  path {
+  stroke: #fff;
+}
+
+.cl-intronies-speaking_widget
+  .cl-intronies-widget_middle
+  .cl-intronies-recording_wrapp
+  .cl-intronies-cta_btn.btn_clear:hover
+  svg
+  #Rectangle_129 {
+  stroke: #fff;
+}
+
+.cl-intronies-speaking_widget .cl-intronies-widget_bottom {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.cl-intronies-speaking_widget
+  .cl-intronies-widget_bottom
+  .cl-intronies-instruction_dropdown {
+  background-color: var(--link-dark);
+  box-shadow: 0 0.5rem 1rem rgba(21, 24, 35, 0.7) !important;
+  border-radius: 27px;
+  padding: 13px 0px;
+  width: 293px;
+  box-shadow: 0 0.5rem 1rem rgba(21, 24, 35, 0.7) !important;
+  position: relative;
+}
+
+.cl-intronies-speaking_widget
+  .cl-intronies-widget_bottom
+  .cl-intronies-instruction_dropdown
+  .dropdown-toggle {
+  color: #fff;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0px 23px;
+  align-items: center;
+  background-color: unset;
+  border: 0;
+}
+
+.cl-intronies-speaking_widget
+  .cl-intronies-widget_bottom
+  .cl-intronies-instruction_dropdown
+  .dropdown-toggle:focus {
+  box-shadow: unset !important;
+  border-color: unset !important;
+}
+
+.cl-intronies-speaking_widget
+  .cl-intronies-widget_bottom
+  .cl-intronies-instruction_dropdown
+  .dropdown-menu {
+  position: relative !important;
+  width: 100% !important;
+  transform: unset !important;
+  background-color: transparent !important;
+  border: unset !important;
+  padding: 0px !important;
+  display: none;
+}
+
+.cl-intronies-speaking_widget
+  .cl-intronies-widget_bottom
+  .cl-intronies-instruction_dropdown
+  .dropdown-menu.show {
+  display: block;
+  top: 20px;
+}
+
+.cl-intronies-speaking_widget
+  .cl-intronies-widget_bottom
+  .cl-intronies-instruction_dropdown
+  .dropdown-menu
+  .dropdown-item {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 14px 20px;
+  font-size: 14px;
+  line-height: 21px;
+  white-space: initial !important;
+  color: #ffffff;
+  display: block;
+  text-decoration: none;
+}
+
+.cl-intronies-speaking_widget
+  .cl-intronies-widget_bottom
+  .cl-intronies-instruction_dropdown
+  .dropdown-menu
+  .dropdown-item:hover {
+  color: #ffffff !important;
+}
+
+.cl-intronies-speaking_widget
+  .cl-intronies-widget_bottom
+  .cl-intronies-instruction_dropdown
+  .dropdown-menu
+  .dropdown-item:last-of-type {
+  border-radius: 0px 0px 27px 27px;
+}
+
+.cl-intronies-speaking_widget
+  .cl-intronies-widget_bottom
+  .cl-intronies-instruction_dropdown
+  .dropdown-menu
+  .dropdown-item:hover {
+  color: var(--link-dark);
+}
+
+.cl-intronies-speaking_widget
+  .cl-intronies-widget_bottom
+  .cl-intronies-instruction_dropdown.show {
+  padding-bottom: 0px;
+}
+
+.cl-intronies-speaking_widget
+  .cl-intronies-widget_bottom
+  .cl-intronies-instruction_dropdown.show
+  .dropdown-toggle::after {
+  transform: rotate(180deg);
+}
+
+.cl-intronies-speaking_widget
+  .cl-intronies-widget_bottom
+  .cl-intronies-email_input {
+  height: 55px;
+}
+
+.cl-intronies-speaking_widget
+  .cl-intronies-widget_bottom
+  .cl-intronies-email_input
+  .cl-intronies-form-controll {
+  box-shadow: 0 0.5rem 1rem rgba(21, 24, 35, 0.7) !important;
+  background-color: var(--link-dark);
+  height: 100% !important;
+  padding: 0 23px;
+  border-radius: 27px !important;
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 16px;
+  border: unset;
+}
+
+.cl-intronies-speaking_widget
+  .cl-intronies-widget_bottom
+  .cl-intronies-email_input
+  .cl-intronies-form-controll::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.cl-intronies-player__box__weave {
+  display: none;
+}
+
+.cl-intronies-player__box__weaver {
+  padding-left: 18px;
+  padding-right: 18px;
+  justify-content: flex-end;
+  background-color: var(--link-dark);
+  border-radius: 33px;
+  margin-bottom: 8px;
+  box-shadow: 0 0.5rem 1rem rgb(21 24 35 / 70%) !important;
+  width: 38%;
+  margin-left: auto;
+}
+
+.cl-intronies-waves {
+  margin: 0;
+  padding: 0;
+  color: #40dbbc;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cl-intronies-waves > div {
+  display: inline-block;
+  width: 3px;
+  height: 40px;
+  margin: 0 4px;
+  background: currentColor;
+  transform: scaleY(0.5);
+  opacity: 0.25;
+}
+
+.cl-intronies-speaking_widget
+  .cl-intronies-widget_bottom
+  .cl-intronies-instruction_dropdown
+  .dropdown-toggle.open::after {
+  transform: rotate(180deg);
+}
+
+.cl-intronies-speaking_widget
+  .cl-intronies-widget_bottom
+  .cl-intronies-instruction_dropdown
+  .dropdown-toggle::after {
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1299px) {
+  .cl-intronies-waves > div {
+    margin: 0 4px;
+  }
+}
+
+@media (max-width: 1099px) {
+  #id-intronies-wave-box {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .cl-intronies-speak_toggle__wrap {
+    width: 100%;
+    padding: 12px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    z-index: 999;
+  }
+
+  .cl-intronies-speak_toggle {
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: 500px) {
+  .cl-intronies-waves > div {
+    height: 40px !important;
+    margin: 0 1px !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .cl-intronies-waves > div {
+    height: 40px !important;
+  }
+
+  .cl-intronies-speaking_widget .cl-intronies-general_wrapp {
+    padding: 9px 18px;
+  }
+
+  .cl-intronies-speaking_widget .cl-intronies-general_wrapp {
+    padding: 9px 18px;
+    font-size: 10.5px;
+    line-height: 17px;
+    gap: 8px;
+  }
+
+  .cl-intronies-speaking_widget
+    .cl-intronies-widget_middle
+    .cl-intronies-recording_wrapp {
+    gap: 8px;
+    justify-content: space-between;
+  }
+
+  .cl-intronies-speaking_widget
+    .cl-intronies-widget_middle
+    .cl-intronies-recording_wrapp
+    .cl-intronies-btn_record__speak {
+    width: 25px;
+    height: 25px;
+  }
+
+  .cl-intronies-speaking_widget
+    .cl-intronies-widget_middle
+    .cl-intronies-recording_wrapp
+    .cl-intronies-btn_record__speak
+    svg {
+    width: 15px;
+  }
+
+  .cl-intronies-speaking_widget
+    .cl-intronies-widget_middle
+    .cl-intronies-recording_wrapp
+    .cl-intronies-pause_button__speak {
+    width: 25px;
+    height: 25px;
+  }
+
+  .cl-intronies-speaking_widget
+    .cl-intronies-widget_middle
+    .cl-intronies-recording_wrapp
+    .cl-intronies-pause_button__speak
+    svg {
+    width: 10px;
+  }
+
+  .cl-intronies-speaking_widget
+    .cl-intronies-widget_middle
+    .cl-intronies-recording_wrapp {
+    padding: 5px 9px;
+  }
+
+  .cl-intronies-speaking_widget
+    .cl-intronies-widget_middle
+    .cl-intronies-recording_wrapp
+    .cl-intronies-record_time
+    h6 {
+    font-size: 11px;
+  }
+
+  .cl-intronies-speaking_widget
+    .cl-intronies-widget_middle
+    .cl-intronies-recording_wrapp
+    .cl-intronies-record_player {
+    max-width: 85px;
+  }
+
+  .cl-intronies-speaking_widget
+    .cl-intronies-widget_middle
+    .cl-intronies-recording_wrapp
+    .cl-intronies-record_player
+    img {
+    width: 100%;
+  }
+
+  .cl-intronies-speaking_widget
+    .cl-intronies-widget_middle
+    .cl-intronies-recording_wrapp
+    .cl-intronies-cta_btn {
+    width: 53px;
+    height: 21px;
+    font-size: 8px;
+    padding: 0px;
+  }
+
+  .cl-intronies-speaking_widget
+    .cl-intronies-widget_middle
+    .cl-intronies-recording_wrapp
+    .cl-intronies-cta_btn
+    svg {
+    width: 11px !important;
+  }
+
+  .cl-intronies-speaking_widget {
+    max-width: calc(100% - 30px);
+    right: 15px;
+    top: 76px;
+  }
+
+  .cl-intronies-speaking_widget .cl-intronies-widget_head {
+    margin-bottom: 8px;
+  }
+
+  .cl-intronies-speaking_widget .cl-intronies-widget_middle {
+    margin-bottom: 8px;
+  }
+
+  .cl-intronies-speaking_widget
+    .cl-intronies-widget_bottom
+    .cl-intronies-instruction_dropdown {
+    padding: 7px 0px;
+    width: 161px;
+  }
+
+  .cl-intronies-speaking_widget
+    .cl-intronies-widget_bottom
+    .cl-intronies-email_input {
+    width: 161px;
+    height: 40px;
+  }
+
+  .cl-intronies-speaking_widget
+    .cl-intronies-widget_middle
+    .cl-intronies-recording_wrapp
+    .cl-intronies-record_time {
+    width: fit-content;
+  }
+
+  .cl-intronies-speaking_widget
+    .cl-intronies-widget_bottom
+    .cl-intronies-instruction_dropdown
+    .dropdown-toggle {
+    color: #fff;
+    font-size: 12px;
+    width: 100%;
+    padding: 4px 12px;
+  }
+
+  .cl-intronies-speaking_widget
+    .cl-intronies-widget_bottom
+    .cl-intronies-instruction_dropdown
+    .dropdown-menu
+    .dropdown-item {
+    padding: 7px 12px;
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  .cl-intronies-speaking_widget
+    .cl-intronies-widget_bottom
+    .cl-intronies-email_input
+    .cl-intronies-form-control {
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  .cl-intronies-speak_toggle.cl-intronies-custom-switch
+    .custom-control-label::before {
+    width: 29px;
+    height: 18px;
+  }
+
+  .cl-intronies-speak_toggle.cl-intronies-custom-switch
+    .custom-control-label::after {
+    width: 14px;
+    height: 14px;
+  }
+
+  .cl-intronies-speak_toggle label span {
+    font-size: 16px !important;
+  }
+}

@@ -1,5 +1,6 @@
-import { useState, useEffect, useRef } from "react"
-import 'transcribe.css'
+import React, { useState, useEffect, useRef } from "react"
+import './transcribe.css'
+
 export default function AudioRecorder() {
     const [isRecording, setIsRecording] = useState(false)
     const [isStartEnabled, setIsStartEnabled] = useState(true)
@@ -28,6 +29,9 @@ export default function AudioRecorder() {
         timerRef.current = setInterval(() => {
             setRecordingTime((prevTime) => prevTime + 1)
         }, 1000)
+    }
+    function swictchSpeak (){
+        
     }
 
     const stopRecording = () => {
@@ -93,8 +97,8 @@ export default function AudioRecorder() {
     }
     return (
         <div className="card-wrapper">
-            <div className="card-header">
-                <svg xmlns="http://www.w3.org/2000/svg" width="110.412" height="34.73"
+            <div className="card-header flex flex-row justify-between w-full">
+                <svg className="w-icon" xmlns="http://www.w3.org/2000/svg" width="110.412" height="34.73"
                     viewBox="0 0 110.412 34.73">
                     <g id="Group_26" data-name="Group 26" transform="translate(-56.928 -70.028)">
                         <path id="Path_27" data-name="Path 27"
@@ -134,61 +138,67 @@ export default function AudioRecorder() {
                             transform="translate(131.832 105.175)" fill="#50a2d2" />
                         <line id="Line_37" data-name="Line 37" x1="6.774" y2="4.34"
                             transform="translate(72.867 73.393)" fill="none" stroke="#41ccc9"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-width="0.852" />
+                            strokeLinecap="round" strokeLinejoin="round" strokeWidth="0.852" />
                         <line id="Line_38" data-name="Line 38" x1="6.774" y2="4.34"
                             transform="translate(72.867 76.65)" fill="none" stroke="#41ccc9"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-width="0.852" />
+                            strokeLinecap="round" strokeLinejoin="round" strokeWidth="0.852" />
                         <line id="Line_39" data-name="Line 39" x1="6.774" y2="4.34"
                             transform="translate(72.867 79.906)" fill="none" stroke="#41ccc9"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-width="0.852" />
+                            strokeLinecap="round" strokeLinejoin="round" strokeWidth="0.852" />
                         <line id="Line_40" data-name="Line 40" x1="3.001" y2="1.923"
                             transform="translate(72.868 95.349)" fill="none" stroke="#41ccc9"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-width="0.852" />
+                            strokeLinecap="round" strokeLinejoin="round" strokeWidth="0.852" />
                         <line id="Line_41" data-name="Line 41" x1="5.804" y2="3.719"
                             transform="translate(72.868 96.81)" fill="none" stroke="#41ccc9"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-width="0.852" />
+                            strokeLinecap="round" strokeLinejoin="round" strokeWidth="0.852" />
                         <line id="Line_42" data-name="Line 42" x1="6.774" y2="4.34"
                             transform="translate(72.867 99.446)" fill="none" stroke="#41ccc9"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-width="0.852" />
+                            strokeLinecap="round" strokeLinejoin="round" strokeWidth="0.852" />
                         <line id="Line_43" data-name="Line 43" x1="6.889" y2="4.41"
                             transform="translate(81.739 87.904)" fill="none" stroke="#41ccc9"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-width="0.852" />
+                            strokeLinecap="round" strokeLinejoin="round" strokeWidth="0.852" />
                         <line id="Line_44" data-name="Line 44" x1="6.889" y2="4.41"
                             transform="translate(81.739 91.161)" fill="none" stroke="#41ccc9"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-width="0.852" />
+                            strokeLinecap="round" strokeLinejoin="round" strokeWidth="0.852" />
                         <line id="Line_45" data-name="Line 45" x1="6.889" y2="4.41"
                             transform="translate(81.739 94.417)" fill="none" stroke="#41ccc9"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-width="0.852" />
+                            strokeLinecap="round" strokeLinejoin="round" strokeWidth="0.852" />
                         <line id="Line_46" data-name="Line 46" x2="6.725" y2="3.652"
                             transform="translate(65.773 73.878)" fill="none" stroke="#41ccc9"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2.273" />
+                            strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.273" />
                         <line id="Line_47" data-name="Line 47" x2="6.725" y2="3.652"
                             transform="translate(65.773 77.089)" fill="none" stroke="#41ccc9"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2.273" />
+                            strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.273" />
                         <line id="Line_48" data-name="Line 48" x2="6.725" y2="3.652"
                             transform="translate(65.773 80.3)" fill="none" stroke="#41ccc9"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2.273" />
+                            strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.273" />
                         <line id="Line_49" data-name="Line 49" x2="23.425" y2="12.208"
                             transform="translate(58.461 79.855)" fill="none" stroke="#41ccc9"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2.273" />
+                            strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.273" />
                         <line id="Line_50" data-name="Line 50" x2="23.425" y2="12.208"
                             transform="translate(58.461 83.066)" fill="none" stroke="#41ccc9"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2.273" />
+                            strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.273" />
                         <line id="Line_51" data-name="Line 51" x2="23.425" y2="12.208"
                             transform="translate(58.461 86.277)" fill="none" stroke="#41ccc9"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2.273" />
+                            strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.273" />
                         <line id="Line_52" data-name="Line 52" x2="6.725" y2="3.652"
                             transform="translate(65.773 93.144)" fill="none" stroke="#41ccc9"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2.273" />
+                            strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.273" />
                         <line id="Line_53" data-name="Line 53" x2="6.725" y2="3.652"
                             transform="translate(65.773 96.355)" fill="none" stroke="#41ccc9"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2.273" />
+                            strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.273" />
                         <line id="Line_54" data-name="Line 54" x2="6.725" y2="3.652"
                             transform="translate(65.773 99.565)" fill="none" stroke="#41ccc9"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2.273" />
+                            strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.273" />
                     </g>
                 </svg>
-                <h3 className="header-text">Intron Transcribe</h3>
+                {/* <h3 className="header-text">Intron Transcribe</h3> */}
+                <button className="btn-secondary svg-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
+
+                </button>
             </div>
             <div className="card-content">
                 <div className="p-4 bg-muted rounded-lg">
@@ -198,34 +208,35 @@ export default function AudioRecorder() {
                     <button
                         onClick={isRecording ? stopRecording : startRecording}
                         disabled={!isStartEnabled}
+                        className="btn btn-primary"
                     >
                         {isRecording ? (
                             <>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" />
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" class="size-6">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" />
                                 </svg>
 
                                 Stop Recording
                             </>
                         ) : (
                             <>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" />
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" class="size-6">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" />
                                 </svg>
                                 Start Recording
                             </>
                         )}
                     </button>
-                    <button onClick={skipSentence}>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8.689c0-.864.933-1.406 1.683-.977l7.108 4.061a1.125 1.125 0 0 1 0 1.954l-7.108 4.061A1.125 1.125 0 0 1 3 16.811V8.69ZM12.75 8.689c0-.864.933-1.406 1.683-.977l7.108 4.061a1.125 1.125 0 0 1 0 1.954l-7.108 4.061a1.125 1.125 0 0 1-1.683-.977V8.69Z" />
+                    <button className="btn btn-secondary" onClick={skipSentence}>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" class="size-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M3 8.689c0-.864.933-1.406 1.683-.977l7.108 4.061a1.125 1.125 0 0 1 0 1.954l-7.108 4.061A1.125 1.125 0 0 1 3 16.811V8.69ZM12.75 8.689c0-.864.933-1.406 1.683-.977l7.108 4.061a1.125 1.125 0 0 1 0 1.954l-7.108 4.061a1.125 1.125 0 0 1-1.683-.977V8.69Z" />
                         </svg>
 
                         Skip
                     </button>
-                    <button onClick={clearRecording}>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                    <button className="btn-danger-outline" onClick={clearRecording}>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" class="size-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
                         </svg>
 
                         Clear
@@ -247,11 +258,17 @@ export default function AudioRecorder() {
                             <span>Recording {recording.id} ({formatTime(recording.duration)})</span>
                             <div>
                                 <button size="sm" variant="ghost" onClick={() => playRecording(recording.id)}>
-                                    {currentlyPlaying === recording.id ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
+                                    {currentlyPlaying === recording.id ? <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
+                                    </svg>
+                                        : <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                                        </svg>
+                                    }
                                 </button>
                                 <button size="sm" variant="ghost" onClick={() => deleteRecording(recording.id)}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" class="size-6">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
                                     </svg>
 
                                 </button>

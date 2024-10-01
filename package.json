@@ -1,10 +1,10 @@
 {
   "name": "intron-transcribe-widget",
   "version": "1.0.0",
-  "main": "dist/transcribe.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src --out-dir dist && copyfiles src/transcribe.css dist"
+    "build": "babel src --out-dir dist && npx postcss src/transcribe.css -o dist/transcribe.css"
   },
   "keywords": [
     "intron",
@@ -20,9 +20,12 @@
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.4",
     "@babel/preset-react": "^7.24.7",
+    "autoprefixer": "^10.4.20",
     "copyfiles": "^2.4.1",
+    "postcss": "^8.4.47",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^3.4.13"
   },
   "peerDependencies": {
     "react": "^18.0.0",
