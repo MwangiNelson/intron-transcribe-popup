@@ -30,7 +30,7 @@ class IntronTranscribeWidget {
                  
                 <textarea id="id-intronies-transcript-textbox" name="id-intronies-transcript-textbox" col="100" row="12"></textarea>
 
-                <div id="id-intronies-app" class="cl-intronies-app">
+                <div id="id-intronies-app" class="cl-intronies-app  bottom">
                     <div id="id-intronies-draggable-containment">
                         <section id="id-intronies-draggable" class="cl-intronies-speaking_widget">
                             <div id="id-intronies-wave-box" class="cl-intronies-player__box__weaver d-md-none">
